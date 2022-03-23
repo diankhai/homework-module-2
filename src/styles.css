@@ -25,6 +25,7 @@ body {
 .wrapper .text {
   float: right;
   text-align: left;
+  padding-right: 20vw;
 }
 .wrapper h3,
 h5,
