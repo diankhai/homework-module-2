@@ -1,19 +1,42 @@
+body {
+  color: white;
+  background-color: black;
+}
 .App {
   font-family: sans-serif;
   text-align: center;
-  /* margin-top:0px; */
+  margin: 0px;
 }
 .heading {
   width: 100%;
   height: fit-content;
-  /* border: 10px solid black; */
-  position: fixed;
   top: 0;
   left: 0;
 }
+.heading h4 {
+  font-style: italic;
+  margin-left: 10px;
+  float: left;
+}
 .wrapper {
   padding-top: 100px;
-  color: white;
-  background-color: black;
   height: 100%;
+}
+.wrapper .text {
+  float: right;
+  text-align: left;
+}
+.wrapper h3,
+h5,
+h6 {
+  margin: 10px;
+}
+.wrapper img {
+  width: 200px;
+}
+.wrapper button {
+  margin: 10px;
+  width: 100px;
+  background-color: white;
+  border-radius: 10px;
 }

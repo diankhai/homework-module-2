@@ -32,12 +32,14 @@ class Detail extends React.Component {
     let coverURL = { ...cover[0] };
     coverURL = { ...coverURL[0] }.url;
     return (
-      <div className="container">
+      <div className="wrapper">
         <img src={coverURL} alt="" />
-        <h3>{items.name}</h3>
-        <h5>{artist}</h5>
-        <h6>{album}</h6>
-        <button>Select</button>
+        <div className="text">
+          <h3>{items.name}</h3>
+          <h5>{artist}</h5>
+          <h6>{album}</h6>
+          <button>Select</button>
+        </div>
       </div>
     );
   }
