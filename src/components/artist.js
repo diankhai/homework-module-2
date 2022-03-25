@@ -2,11 +2,11 @@ import React from "react";
 
 // const  image = (props) => <div>Hello, {props.name}</div>;
 
-const artistPage = (props) => (
+const Page = (props) => (
     <a href={props.imgURL}><img href={props.externalURL} /></a>
 );
 
-const artistInfo = ({
+const Info = ({
     name,
     image
   }) => (
@@ -16,4 +16,4 @@ const artistInfo = ({
     </div>
   );
 
-export {artistPage, artistInfo};
+export {Page, Info};

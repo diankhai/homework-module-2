@@ -1,13 +1,13 @@
 import React from 'react';
-import { artistInfo, artistPage } from './artist';
-import { songInfo, albumInfo } from './album';
+import { Info, Page } from './artist';
+import { SongInfo, AlbumInfo } from './album';
 
 class Artist extends React.Component {
     render() {
         return (<div>
-                    <artistInfo name={this.props.name}>
-                        <artistPage imgURL={this.props.img} externalURL={this.props.link}/>
-                    </artistInfo>
+                    <Info name={this.props.name}>
+                        <Page imgURL={this.props.img} externalURL={this.props.link}/>
+                    </Info>
                     <button>Select</button>
                 </div>)
     }
@@ -16,9 +16,9 @@ class Artist extends React.Component {
 class Song extends React.Component {
     render() {
         return (
-            <albumInfo album={this.props.album}>
-                <songInfo title={this.props.title}/>
-            </albumInfo>
+            <AlbumInfo album={this.props.album}>
+                <SongInfo title={this.props.title}/>
+            </AlbumInfo>
         )
     }
 }

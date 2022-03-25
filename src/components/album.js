@@ -1,11 +1,11 @@
 import React from "react";
 
-const songInfo = (props) => (
+const SongInfo = (props) => (
     <h3>{props.title}</h3>
 );
 
 
-const albumInfo = ({
+const AlbumInfo = ({
     album,
     song
   }) => (
@@ -15,4 +15,4 @@ const albumInfo = ({
     </div>
   );
 
-export {songInfo, albumInfo};
+export {SongInfo, AlbumInfo};
