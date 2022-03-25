@@ -5,7 +5,7 @@ import {Artist, Song} from "./components"
 const apiURL =
   "https://gist.githubusercontent.com/aryapradipta9/e6492383477803b233916e01f36d5465/raw/66942c739d66d3774303f84071696aa865a07077/single-sample.json";
 
-const artistIMG = "https://picfiles.alphacoders.com/296/thumb-1920-296736.jpg";
+const artistIMG = "./public/pic-1.jpg";
 
 class Detail extends React.Component {
   state = {};

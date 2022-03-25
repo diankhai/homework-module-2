@@ -5,8 +5,7 @@ import { SongInfo, AlbumInfo } from './album';
 class Artist extends React.Component {
     render() {
         return (<div>
-                    <Info name={this.props.name}>
-                        <Page imgURL={this.props.img} externalURL={this.props.link}/>
+                    <Info name={this.props.name} imgURL={this.props.img} externalURL={this.props.link}>
                     </Info>
                     <button>Select</button>
                 </div>)

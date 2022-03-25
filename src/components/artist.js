@@ -6,13 +6,10 @@ const Page = (props) => (
     <a href={props.imgURL}><img href={props.externalURL} /></a>
 );
 
-const Info = ({
-    name,
-    image
-  }) => (
+const Info = () => (
     <div>
-        {image}
-        <h5>{name}</h5>
+        <a href={this.props.imgURL}><img href={this.props.externalURL} /></a>
+        <h5>{this.props.name}</h5>
     </div>
   );
 
