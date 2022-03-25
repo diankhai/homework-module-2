@@ -2,7 +2,7 @@ import React from 'react';
 import { artistInfo, artistPage } from './artist';
 import { songInfo, albumInfo } from './album';
 
-class ArtistClass extends React.Component {
+class artistClass extends React.Component {
     render() {
         return (<div>
                     <artistInfo name={this.props.name}>
@@ -13,7 +13,7 @@ class ArtistClass extends React.Component {
     }
 }
 
-class SongClass extends React.Component {
+class songClass extends React.Component {
     render() {
         return (
             <albumInfo album={this.props.album}>
@@ -23,4 +23,4 @@ class SongClass extends React.Component {
     }
 }
 
-export {ArtistClass, SongClass};
+export {artistClass, songClass};

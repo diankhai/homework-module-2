@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { ArtistClass, SongClass } from "./components";
+import { artistClass, songClass } from "./components";
 
 const apiURL =
   "https://gist.githubusercontent.com/aryapradipta9/e6492383477803b233916e01f36d5465/raw/66942c739d66d3774303f84071696aa865a07077/single-sample.json";
@@ -40,8 +40,8 @@ class Detail extends React.Component {
       <div className="wrapper">
         <img src={coverURL} alt="" />
         <div className="text">
-          <SongClass title={items.name} album={album} />
-          <ArtistClass name={artist} img={artistIMG} link={artistURL} />
+          <songClass title={items.name} album={album} />
+          <artistClass name={artist} img={artistIMG} link={artistURL} />
         </div>
       </div>
     );
