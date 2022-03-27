@@ -38,6 +38,7 @@ class Detail extends React.Component {
     coverURL = { ...coverURL[0] }.url;
     return (
       <div className="wrapper">
+        {/* <img src={artistIMG} alt="" /> */}
         <img src={coverURL} alt="" />
         <div className="text">
           <Song title={items.name} album={album} />
