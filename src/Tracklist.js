@@ -1,9 +1,8 @@
 import axios from "axios";
 import React from "react";
-// import { Artist, Song } from "./components";
+//ga bisa import data from external URL
+// import data from "https://gist.githubusercontent.com/aryapradipta9/4085f18a47101f10f685a6140385b2bf/raw/e32426bc2d954274e984b03c601f14c08eb47a0b/all-sample.js";
 
-const apiURL =
-  "https://gist.githubusercontent.com/aryapradipta9/4085f18a47101f10f685a6140385b2bf/raw/e32426bc2d954274e984b03c601f14c08eb47a0b/all-sample.js";
 
 class Tracklist extends React.Component {
   state = {};
