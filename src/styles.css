@@ -41,3 +41,18 @@ h6 {
   background-color: white;
   border-radius: 10px;
 }
+.text img {
+  width: 30px;
+  border: 1px solid white;
+  border-radius: 50px;
+  margin: 5px 10px;
+  float: left;
+}
+.text h5 {
+  padding-top: 12px;
+}
+.text .btn-select {
+  margin-top: 20px;
+  clear: both;
+  display: block;
+}
