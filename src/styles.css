@@ -1,6 +1,8 @@
 body {
   color: white;
-  background-color: black;
+  background-image: url("https://images.pexels.com/photos/1526/dark-blur-blurred-gradient.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .App {
   font-family: sans-serif;
@@ -24,10 +26,12 @@ body {
 }
 .wrapper {
   /* margin-top: 100px; */
+  float: left;
   width: fit-content;
   height: 100%;
   background-color: rgba(236, 236, 236, 0.151);
   border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .wrapper h3,
 h5,
@@ -57,7 +61,32 @@ h6 {
   clear: both;
   display: block;
   margin: 30px 10px;
-  width: 100px;
-  background-color: white;
+  width: 300px;
+  height: 30px;
+  background-color: whitesmoke;
   border-radius: 10px;
+}
+.main h4 {
+  margin: 10px 50px;
+  float: right;
+  font-style: italic;
+}
+.tracklist {
+  padding: 0 10px;
+  width: 650px;
+  float: right;
+  column-count: 2;
+}
+.track {
+  padding: 5px;
+  background-color: rgba(236, 236, 236, 0.151);
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  /* float: left; */
+}
+.track-cover {
+  width: 50px;
+  float: left;
+  padding: 2px 5px;
 }
