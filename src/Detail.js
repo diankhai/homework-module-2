@@ -37,9 +37,10 @@ class Detail extends React.Component {
     let cover = new Array(albumObj.images);
     let coverURL = { ...cover[0] };
     coverURL = { ...coverURL[0] }.url;
+
     return (
       <div className="wrapper">
-        <img src={coverURL} alt="" />
+        <img className="cover-image" src={coverURL} alt="" />
         <div className="text">
           <Song title={items.name} album={album} />
           <Artist name={artist} img={artistIMG} link={artistURL} />
