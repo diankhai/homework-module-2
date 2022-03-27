@@ -12,34 +12,36 @@ body {
   height: fit-content;
   top: 0;
   left: 0;
+  position: fixed;
 }
 .heading h4 {
   font-style: italic;
   margin-left: 10px;
   float: left;
 }
-.wrapper {
-  padding-top: 100px;
-  height: 100%;
+.main {
+  padding: 100px;
 }
-.wrapper .text {
-  float: right;
-  text-align: left;
-  padding-right: 20vw;
+.wrapper {
+  /* margin-top: 100px; */
+  width: fit-content;
+  height: 100%;
+  background-color: rgba(236, 236, 236, 0.151);
+  border-radius: 20px;
 }
 .wrapper h3,
 h5,
 h6 {
   margin: 10px;
 }
-.wrapper img {
+.cover-image {
+  padding-top: 30px;
   width: 200px;
 }
-.wrapper button {
-  margin: 10px;
-  width: 100px;
-  background-color: white;
-  border-radius: 10px;
+.text {
+  /* float: right; */
+  text-align: left;
+  padding: 20px;
 }
 .text img {
   width: 30px;
@@ -52,7 +54,10 @@ h6 {
   padding-top: 12px;
 }
 .text .btn-select {
-  margin-top: 20px;
   clear: both;
   display: block;
+  margin: 30px 10px;
+  width: 100px;
+  background-color: white;
+  border-radius: 10px;
 }
