@@ -1,18 +1,10 @@
 import React from "react";
 
-const SongInfo = (props) => (
-    <h3>{props.title}</h3>
+const AlbumInfo = ({ album, title }) => (
+  <div>
+    <h3>{title}</h3>
+    <h6>{album}</h6>
+  </div>
 );
 
-
-const AlbumInfo = ({
-    album,
-    song
-  }) => (
-    <div>
-        {song}
-        <h6>{album}</h6>
-    </div>
-  );
-
-export {SongInfo, AlbumInfo};
+export { AlbumInfo };

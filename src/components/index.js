@@ -1,25 +1,30 @@
-import React from 'react';
-import { Info, Page } from './artist';
-import { SongInfo, AlbumInfo } from './album';
+import React from "react";
+import { Info } from "./artist";
+import { AlbumInfo } from "./album";
 
 class Artist extends React.Component {
-    render() {
-        return (<div>
-                    <Info name={this.props.name} imgURL={this.props.img} externalURL={this.props.link}>
-                    </Info>
-                    <button>Select</button>
-                </div>)
-    }
+  render() {
+    return (
+      <div>
+        <Info
+          name={this.props.name}
+          imgURL={this.props.img}
+          externalURL={this.props.link}
+        ></Info>
+        <button className="btn-select">Select</button>
+      </div>
+    );
+  }
 }
 
 class Song extends React.Component {
-    render() {
-        return (
-            <AlbumInfo album={this.props.album}>
-                <SongInfo title={this.props.title}/>
-            </AlbumInfo>
-        )
-    }
+  render() {
+    return (
+      <AlbumInfo album={this.props.album} title={this.props.title}>
+        {/* <SongInfo title={this.props.title} /> */}
+      </AlbumInfo>
+    );
+  }
 }
 
-export {Artist, Song};
+export { Artist, Song };

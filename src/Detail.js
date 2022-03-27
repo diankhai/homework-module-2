@@ -1,11 +1,12 @@
 import axios from "axios";
 import React from "react";
-import {Artist, Song} from "./components"
+import { Artist, Song } from "./components";
 
 const apiURL =
   "https://gist.githubusercontent.com/aryapradipta9/e6492383477803b233916e01f36d5465/raw/66942c739d66d3774303f84071696aa865a07077/single-sample.json";
 
-const artistIMG = "./public/pic-1.jpg";
+const artistIMG =
+  "https://github.com/diankhai/homework-module-2/blob/main/public/pic-1.jpg?raw=true";
 
 class Detail extends React.Component {
   state = {};
@@ -38,7 +39,6 @@ class Detail extends React.Component {
     coverURL = { ...coverURL[0] }.url;
     return (
       <div className="wrapper">
-        {/* <img src={artistIMG} alt="" /> */}
         <img src={coverURL} alt="" />
         <div className="text">
           <Song title={items.name} album={album} />

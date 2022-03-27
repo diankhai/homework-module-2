@@ -2,15 +2,13 @@ import React from "react";
 
 // const  image = (props) => <div>Hello, {props.name}</div>;
 
-const Page = (props) => (
-    <a href={props.imgURL}><img href={props.externalURL} /></a>
+const Info = ({ name, imgURL, externalURL }) => (
+  <div>
+    <a href={externalURL}>
+      <img src={imgURL} alt="" />
+    </a>
+    <h5>{name}</h5>
+  </div>
 );
 
-const Info = (props) => (
-    <div>
-        <a href={props.link}><img href={props.img} /></a>
-        <h5>{props.name}</h5>
-    </div>
-  );
-
-export {Page, Info};
+export { Info };
