@@ -9,6 +9,7 @@ export default function App() {
       <Header />
       <div className="main">
         <Detail />
+        <h4>See more ...</h4>
         <Tracklist />
       </div>
     </div>

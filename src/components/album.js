@@ -8,11 +8,10 @@ const AlbumInfo = ({ album, title }) => (
 );
 
 const SongInfo = ({ song, artist, cover }) => (
-  <div>
-    <img src={cover} alt={song} />
+  <div className="track">
+    <img className="track-cover" src={cover} alt={song} />
     <h6>{song}</h6>
     <h6>{artist}</h6>
-    <h6>5</h6>
   </div>
 );
 

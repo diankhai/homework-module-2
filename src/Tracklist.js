@@ -24,8 +24,7 @@ class Tracklist extends React.Component {
     // console.log(tracks);
     const track = tracks.map((track) => <MapData items={track} />);
     return (
-      <div className="wrapper">
-        <h4>See more ...</h4>
+      <div className="tracklist">
         {track}
       </div>
     );
