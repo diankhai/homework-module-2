@@ -1,7 +1,7 @@
 import "./styles.css";
 import Header from "./Header";
-// import Main from "./Main";
 import Detail from "./Detail";
+import Tracklist from "./Tracklist";
 
 export default function App() {
   return (
@@ -9,6 +9,7 @@ export default function App() {
       <Header />
       <div className="main">
         <Detail />
+        <Tracklist />
       </div>
     </div>
   );
