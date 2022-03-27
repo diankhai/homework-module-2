@@ -8,7 +8,7 @@ const Page = (props) => (
 
 const Info = (props) => (
     <div>
-        <a href={props.externalURL}><img href={props.imgURL} /></a>
+        <a href={props.link}><img href={props.img} /></a>
         <h5>{props.name}</h5>
     </div>
   );
