@@ -1,6 +1,7 @@
 import React from "react";
 import { Info } from "./artist";
 import { AlbumInfo } from "./album";
+import { redirURL } from "./spotifyAuth";
 
 class Artist extends React.Component {
   render() {
