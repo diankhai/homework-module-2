@@ -1,7 +1,23 @@
-const authEndpoint = "https://accounts.spotify.com/authorize";
-const clientId = "de080cb8483748199cea3244c39496cd";
-let scope = "playlist-modify-private";
-
-const redirURL = `${authEndpoint}?client_id=${clientId}$scope=${scope}$response_type=token`;
-
-export { redirURL };
+import axios from 'axios';
+export const getParamValues = (url) => {
+  return url
+    .slice(1)
+    .split('&')
+    .reduce((prev, curr) => {
+      const [title, value] = curr.split('=');
+      prev[title] = value;
+      return prev;
+    }, {});
+};
+export const setAuthHeader = () => {
+  try {
+    const params = JSON.parse(localStorage.getItem('params'));
+    if (params) {
+      axios.defaults.headers.common[
+        'Authorization'
+      ] = `Bearer ${params.access_token}`;
+    }
+  } catch (error) {
+    console.log('Error setting auth', error);
+  }
+};

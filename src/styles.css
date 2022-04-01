@@ -15,11 +15,22 @@ body {
   top: 0;
   left: 0;
   position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .heading h4 {
   font-style: italic;
   margin-left: 10px;
   float: left;
+}
+.heading ul{
+  float:right;
+  margin-top:20px;
+  margin-right:10px;
+  list-style-type:none;
+}
+.heading ul li{
+  float:left;
+  margin-right:15px;
 }
 .main {
   padding: 100px;
@@ -89,4 +100,10 @@ h6 {
   width: 50px;
   float: left;
   padding: 2px 5px;
+}
+
+.section2 {
+  clear: both;
+  height:200px;
+  padding:100px;
 }
