@@ -1,6 +1,7 @@
 import { getParamValues } from "./components/spotifyAuth";
 import React from "react";
 import { IsEmpty } from "react-lodash";
+import {Search} from "./Tracklist"
 
 
 const authEndpoint = "https://accounts.spotify.com/authorize";
@@ -22,13 +23,14 @@ class Searchbar extends React.Component {
         let expiryTime = new Date().getTime() + response.expires_in * 1000;
         this.setState({ token:response.access_token });
         this.setState({ expires_time:response.expiryTime });
-        console.log(response);
+        console.log(response); 
+        Search(response.access_token);
     }
 
     render(){
         return(
             <div>
-                <button onClick={this.handleURL}>Get Token</button>
+                <button onClick={this.handleURL} className="accessbutton">Get Token</button>
                 <input type="search"></input>
                 <button onClick={this.getToken} type="submit">Find</button>
             </div>

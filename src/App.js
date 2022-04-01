@@ -13,11 +13,12 @@ export default function App() {
       <Header />
       <section id="top" className="main">
         <Detail />
-        <h4><a href="#searchbar">See more ...</a></h4>
+        {/* <h4><a href="#searchbar">See more ...</a></h4> */}
+        <Searchbar />
         <Tracklist />
       </section>
       <section id="searchbar" className="section2">
-        <Searchbar />
+        
       </section>
     </div>
   );

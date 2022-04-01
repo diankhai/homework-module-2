@@ -4,6 +4,40 @@ import React from "react";
 import data from "./components/Data";
 import { SongInfo } from "./components/album";
 
+const Search = (accessToken) => {
+  console.log(accessToken);
+  return fetch(`https://api.spotify.com/v1/search?q=artist:queen&type=track&limit=20`, {headers: {
+      Authorization: `Bearer ${accessToken}`
+  }
+  }).then(response => {
+    return response.json();
+    // let items = response.json();
+  })
+  .then(jsonResponse => {
+    if (!jsonResponse.tracks){
+        return [];
+    } 
+    console.log(jsonResponse);
+    const list = jsonResponse.tracks.items.map(track => 
+      <SongInfo  key={track.id} song={track.name} artist={track.artists.name} cover={track.album.images[0].url} />
+      // ({
+      //   id: track.id,
+      //   name: track.name,
+      //   artist: track.artist.name,
+      //   album: track.album.name,
+      //   uri: track.uri
+      // })
+    )
+    return (
+      <div className="tracklist">
+        {list}
+      </div>
+    );
+  });
+};
+
+export {Search};
+
 const MapData = ({ items }) => {
   // console.log(items);
   let albumObj = { ...items.album };
@@ -23,6 +57,7 @@ class Tracklist extends React.Component {
     tracks = tracks[0];
     // console.log(tracks);
     const track = tracks.map((track) => <MapData items={track} />);
+    // const track = Search(this.props.accessToken)
     return (
       <div className="tracklist">
         {track}
