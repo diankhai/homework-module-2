@@ -49,7 +49,7 @@ class Searchbar extends React.Component {
                 <form useref="form" onSubmit={this.getToken}> 
                     {/* <h6>Find Track</h6> */}
                     <input onChange = {this.handleChange} value = {this.state.artistName} placeholder="Type Artist Name..." />
-                    <button type="submit" className="accessbutton">Generate Token</button>
+                    <button type="submit" className="accessbutton">Find</button>
                 </form>
                 <Tracklist data={this.state.tracks} />
             </>

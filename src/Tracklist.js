@@ -4,20 +4,19 @@ import React from "react";
 import data from "./components/Data";
 import { SongInfo } from "./components/album";
 
-const Search = (accessToken) => {
-  console.log(accessToken);
-  return fetch(`https://api.spotify.com/v1/search?q=artist:queen&type=track&limit=20`, {headers: {
+const Search = (accessToken,e) => {
+  //`https://api.spotify.com/v1/search?q=artist:queen&type=track&limit=20`
+  console.log(e);
+  return fetch(`https://api.spotify.com/v1/search?q=artist:${e}&type=track&limit=20`, {headers: {
       Authorization: `Bearer ${accessToken}`
   }
   }).then(response => {
     return response.json();
-    // let items = response.json();
   })
   .then(jsonResponse => {
     if (!jsonResponse.tracks){
         return [];
     } 
-    // console.log(jsonResponse);
     let lists = jsonResponse.tracks.items.map(track => 
       // <SongInfo  key={track.id} song={track.name} artist={track.artists.name} cover={track.album.images[0].url} />
       ({
@@ -37,12 +36,9 @@ let items={};
 const getObj = (obj) => {
   if (obj){
     items=obj;
-    // console.log(items);
   } else {
-    // console.log(items);
     return items;
   }
-  // return items;
 }
 
 export {Search, getObj};
@@ -64,10 +60,9 @@ class Tracklist extends React.Component {
   render() {
     let items = (this.props.data);
     let track = <div></div>;
-    // console.log(items);
     if (items){
       track = items.map((track) => 
-      <SongInfo  key={track.id} song={track.name} artist={track.artists} cover={track.cover} />
+      <SongInfo  key={track.id} song={track.name} artist={track.artist} cover={track.cover} />
     )};
     return (
       <div className="tracklist">

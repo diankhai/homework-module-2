@@ -20,7 +20,7 @@ class Artist extends React.Component {
 class Song extends React.Component {
   render() {
     return (
-      <AlbumInfo album={this.props.album} title={this.props.title}>
+      <AlbumInfo album={this.props.album} title={this.props.title} >
         {/* <SongInfo title={this.props.title} /> */}
       </AlbumInfo>
     );
