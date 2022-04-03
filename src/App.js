@@ -15,7 +15,7 @@ export default function App() {
         <Detail />
         {/* <h4><a href="#searchbar">See more ...</a></h4> */}
         <Searchbar />
-        <Tracklist />
+        {/* <Tracklist /> */}
       </section>
       <section id="searchbar" className="section2">
         

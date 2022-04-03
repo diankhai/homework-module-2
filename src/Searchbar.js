@@ -1,7 +1,7 @@
 import { getParamValues } from "./components/spotifyAuth";
 import React from "react";
 import { IsEmpty } from "react-lodash";
-import {Search} from "./Tracklist"
+import Tracklist, {Search, getObj} from "./Tracklist"
 
 
 const authEndpoint = "https://accounts.spotify.com/authorize";
@@ -12,28 +12,47 @@ const redirUri="http://localhost:3000/";
 // const redirURL = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirUri}&scope=${scope}&response_type=token&show_dialog=true`;  
 
 class Searchbar extends React.Component {
-    state = {};
-
+    state = {
+        artistName:'',
+        token:'',
+        tracks:'',
+    };
+    
     handleURL = () => {
         window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirUri}&scope=${scope}&response_type=token&show_dialog=true`;
     };
 
-    getToken = () => {
-        let response = getParamValues(window.location.hash);
-        let expiryTime = new Date().getTime() + response.expires_in * 1000;
-        this.setState({ token:response.access_token });
-        this.setState({ expires_time:response.expiryTime });
-        console.log(response); 
-        Search(response.access_token);
+    handleChange = (event) => {
+        this.setState({artistName: event.target.value});
     }
 
+    getToken = () => {
+        let response = getParamValues(window.location.hash);
+        // let expiryTime = new Date().getTime() + response.expires_in * 1000;
+        this.setState({ token:response.access_token }, () => {
+            // console.log(this.state.token)
+        });
+        let tracks = Search(this.state.token,this.state.artistName);
+        tracks.then(
+            function(value){
+                const list = value;
+                getObj(list);
+        });
+        setTimeout(() => {  let obj = getObj(null);
+            this.setState({tracks:obj});
+        }, 1000);
+    }
     render(){
         return(
-            <div>
-                <button onClick={this.handleURL} className="accessbutton">Get Token</button>
-                <input type="search"></input>
-                <button onClick={this.getToken} type="submit">Find</button>
-            </div>
+            <>
+                <button onClick={this.handleURL} className="accessbutton">Authorization</button>
+                <form useref="form" onSubmit={this.getToken}> 
+                    {/* <h6>Find Track</h6> */}
+                    <input onChange = {this.handleChange} value = {this.state.artistName} placeholder="Type Artist Name..." />
+                    <button type="submit" className="accessbutton">Generate Token</button>
+                </form>
+                <Tracklist data={this.state.tracks} />
+            </>
         );
     };
 }

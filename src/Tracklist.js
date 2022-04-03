@@ -17,26 +17,35 @@ const Search = (accessToken) => {
     if (!jsonResponse.tracks){
         return [];
     } 
-    console.log(jsonResponse);
-    const list = jsonResponse.tracks.items.map(track => 
-      <SongInfo  key={track.id} song={track.name} artist={track.artists.name} cover={track.album.images[0].url} />
-      // ({
-      //   id: track.id,
-      //   name: track.name,
-      //   artist: track.artist.name,
-      //   album: track.album.name,
-      //   uri: track.uri
-      // })
-    )
-    return (
-      <div className="tracklist">
-        {list}
-      </div>
+    // console.log(jsonResponse);
+    let lists = jsonResponse.tracks.items.map(track => 
+      // <SongInfo  key={track.id} song={track.name} artist={track.artists.name} cover={track.album.images[0].url} />
+      ({
+        id: track.id,
+        name: track.name,
+        artist: track.artists.name,
+        album: track.album.name,
+        uri: track.uri,
+        cover:track.album.images[0].url
+      })
     );
+    return lists;
   });
 };
 
-export {Search};
+let items={};
+const getObj = (obj) => {
+  if (obj){
+    items=obj;
+    // console.log(items);
+  } else {
+    // console.log(items);
+    return items;
+  }
+  // return items;
+}
+
+export {Search, getObj};
 
 const MapData = ({ items }) => {
   // console.log(items);
@@ -53,11 +62,13 @@ const MapData = ({ items }) => {
 
 class Tracklist extends React.Component {
   render() {
-    let tracks = [data];
-    tracks = tracks[0];
-    // console.log(tracks);
-    const track = tracks.map((track) => <MapData items={track} />);
-    // const track = Search(this.props.accessToken)
+    let items = (this.props.data);
+    let track = <div></div>;
+    // console.log(items);
+    if (items){
+      track = items.map((track) => 
+      <SongInfo  key={track.id} song={track.name} artist={track.artists} cover={track.cover} />
+    )};
     return (
       <div className="tracklist">
         {track}
