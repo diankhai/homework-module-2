@@ -6,7 +6,7 @@ import { SongInfo } from "./components/album";
 
 const Search = (accessToken,e) => {
   //`https://api.spotify.com/v1/search?q=artist:queen&type=track&limit=20`
-  console.log(e);
+  // console.log(e);
   return fetch(`https://api.spotify.com/v1/search?q=artist:${e}&type=track&limit=20`, {headers: {
       Authorization: `Bearer ${accessToken}`
   }
@@ -62,7 +62,7 @@ class Tracklist extends React.Component {
     let track = <div></div>;
     if (items){
       track = items.map((track) => 
-      <SongInfo  key={track.id} song={track.name} artist={track.artist} cover={track.cover} />
+      <SongInfo  key={track.id} song={track.name} artist={track.artist} cover={track.cover} uri={track.uri}/>
     )};
     return (
       <div className="tracklist">

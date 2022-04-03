@@ -7,9 +7,19 @@ const AlbumInfo = ({ album, title }) => (
   </div>
 );
 
-const SongInfo = ({ song, artist, cover }) => {
-  const [label, setLabel] = useState('Select');
+let arr = [];
+const Datas = (uri) => {
+  // const [arr,setArr] = useState([]);
+  if(uri){
+    arr.push(uri);
+  }else{
+    return(arr);
+  }
+}
 
+const SongInfo = ({ song, artist, cover, uri }) => {
+  const [label, setLabel] = useState('Select');
+  // console.log(uri);
   return(
   <div className="track">
     <img className="track-cover" src={cover} alt={song} />
@@ -18,6 +28,7 @@ const SongInfo = ({ song, artist, cover }) => {
     <button onClick={() => {
       if (label=='Select'){
         setLabel("Deselect")
+        Datas(uri);
       }else{
         setLabel("Select")
     }}}>{label}</button>
@@ -25,4 +36,4 @@ const SongInfo = ({ song, artist, cover }) => {
   );
 };
 
-export { AlbumInfo, SongInfo };
+export { AlbumInfo, SongInfo, Datas };

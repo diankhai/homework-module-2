@@ -1,6 +1,7 @@
 import "./styles.css";
 import Header from "./Header";
 import Detail from "./Detail";
+import NewPlaylist from "./newPlaylist";
 import Tracklist from "./Tracklist";
 import Searchbar from "./Searchbar";
 import {Navigation} from "./router/navigation"
@@ -12,14 +13,13 @@ export default function App() {
       <Navigation />
       <Header />
       <section id="top" className="main">
-        <Detail />
-        {/* <h4><a href="#searchbar">See more ...</a></h4> */}
-        <Searchbar />
-        {/* <Tracklist /> */}
+        {/* <Detail /> */}
+        <NewPlaylist />
       </section>
-      <section id="searchbar" className="section2">
+
+      {/* <section id="searchbar" className="section2">
         
-      </section>
+      </section> */}
     </div>
   );
 }

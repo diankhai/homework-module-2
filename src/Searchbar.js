@@ -16,6 +16,7 @@ class Searchbar extends React.Component {
         artistName:'',
         token:'',
         tracks:'',
+        tracksave:[],
     };
     
     handleURL = () => {
@@ -29,9 +30,7 @@ class Searchbar extends React.Component {
     getToken = () => {
         let response = getParamValues(window.location.hash);
         // let expiryTime = new Date().getTime() + response.expires_in * 1000;
-        this.setState({ token:response.access_token }, () => {
-            // console.log(this.state.token)
-        });
+        this.setState({ token:response.access_token });
         let tracks = Search(this.state.token,this.state.artistName);
         tracks.then(
             function(value){
@@ -42,14 +41,16 @@ class Searchbar extends React.Component {
             this.setState({tracks:obj});
         }, 1000);
     }
+
     render(){
         return(
             <>
-                <button onClick={this.handleURL} className="accessbutton">Authorization</button>
+                <button onClick={this.handleURL} className="accessBtn">Authorization</button>
+                <h4>Select Tracks</h4>
                 <form useref="form" onSubmit={this.getToken}> 
                     {/* <h6>Find Track</h6> */}
                     <input onChange = {this.handleChange} value = {this.state.artistName} placeholder="Type Artist Name..." />
-                    <button type="submit" className="accessbutton">Find</button>
+                    <button type="submit">Find</button>
                 </form>
                 <Tracklist data={this.state.tracks} />
             </>
