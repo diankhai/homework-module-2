@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Searchbar from "./Searchbar";
 import { getParamValues } from "./components/spotifyAuth";
-import { Datas } from "./components/album"
+import { Datas } from "./components/album";
+import { useSelector, useDispatch } from "redux";
+import { saveToken } from "./redux/action";
 
 class NewPlaylist extends React.Component {
     // const [songs,setSongs] = useState();
@@ -13,6 +15,7 @@ class NewPlaylist extends React.Component {
     getToken = () => {
       let response = getParamValues(window.location.hash);
       const token = response.access_token
+      dispatchEvent(saveToken(token));
       return token;
     }
 
