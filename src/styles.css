@@ -87,10 +87,6 @@ h6 {
   font-style: italic;
   font-size: larger;
 }
-.accessBtn{
-  float: left;
-  margin: 20px;
-}
 .tracklist {
   padding: 0 10px;
   width: 650px;
@@ -140,4 +136,23 @@ textarea{
   height: 100px;
   border-radius: 5px;
   border: 1px solid darkgray;
+}
+.wrapper-login {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  height: 100%;
+  background-color: rgba(236, 236, 236, 0.151);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.accessBtn{
+  margin: 20px;
+  width:200px;
+  height:50px;
+}
+.logo{
+  width:200px;
+  margin:50px;
 }

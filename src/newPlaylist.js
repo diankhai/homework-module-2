@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Searchbar from "./Searchbar";
 import { getParamValues } from "./components/spotifyAuth";
 import { Datas } from "./components/album";
-import { useSelector, useDispatch } from "redux";
+import { useSelector, useDispatch } from "react-redux";
 import { saveToken } from "./redux/action";
 
 class NewPlaylist extends React.Component {
@@ -16,11 +16,11 @@ class NewPlaylist extends React.Component {
       let response = getParamValues(window.location.hash);
       const token = response.access_token
       dispatchEvent(saveToken(token));
-      return token;
     }
 
     submit=()=>{
-      let access_token = this.getToken();
+       this.getToken();
+       let access_token = useSelector((state) => state.value);
       let user_id = "de080cb8483748199cea3244c39496cd";
       let tracks = Datas();
       console.log(tracks);
@@ -64,7 +64,7 @@ class NewPlaylist extends React.Component {
 
     render(){
         return (
-          <>
+          <div className="main">
             <div className="wrapper">
               <form useref="form" onSubmit={this.submit} className="form-p">
                   <h3>Create a New Playlist</h3>
@@ -77,7 +77,7 @@ class NewPlaylist extends React.Component {
             </div>
 
             <Searchbar />
-          </>
+          </div>
           );
     }
 };

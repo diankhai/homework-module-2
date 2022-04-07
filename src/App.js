@@ -1,25 +1,47 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  Navigate
+} from "react-router-dom";
 import "./styles.css";
 import Header from "./Header";
-import Detail from "./Detail";
 import NewPlaylist from "./newPlaylist";
-import Tracklist from "./Tracklist";
-import Searchbar from "./Searchbar";
-import {Navigation} from "./router/navigation"
-
+import Login from "./components/loginpage";
+// import { useSelector } from "react-redux";
+import { getParamValues } from "./components/spotifyAuth";
 
 export default function App() {
+  let isLogin = false;
+  let response = getParamValues(window.location.hash);
+  const token = response.access_token;
+    if (token){
+      isLogin=true;
+    }
+  const PrivateRoute = ({ children }) => {
+    return isLogin ? children : <Navigate to="/" />;
+  }
   return (
+    <Router>
     <div className="App">
-      <Navigation />
-      <Header />
-      <section id="top" className="main">
-        {/* <Detail /> */}
-        <NewPlaylist />
-      </section>
-
-      {/* <section id="searchbar" className="section2">
-        
-      </section> */}
-    </div>
+      <div className="heading">
+      <h4>MusicApp</h4>
+      <nav>
+        <ul>
+          <li><Link to="/">Login</Link></li>
+          <li><Link to="/create-playlist">New Playlist</Link></li>
+        </ul>
+      </nav>
+      </div>
+    
+      <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/create-playlist" element={<PrivateRoute>
+                                                    <NewPlaylist/>
+                                                  </PrivateRoute>} />
+      </Routes>
+      </div>
+    </Router>
   );
 }

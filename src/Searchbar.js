@@ -45,7 +45,7 @@ class Searchbar extends React.Component {
     render(){
         return(
             <>
-                <button onClick={this.handleURL} className="accessBtn">Authorization</button>
+                {/* <button onClick={this.handleURL} className="accessBtn">Authorization</button> */}
                 <h4>Select Tracks</h4>
                 <form useref="form" onSubmit={this.getToken}> 
                     {/* <h6>Find Track</h6> */}
