@@ -19,19 +19,21 @@ const Datas = (uri) => {
 
 const SongInfo = ({ song, artist, cover, uri }) => {
   const [label, setLabel] = useState('Select');
-  // console.log(uri);
+  console.log(artist);
   return(
   <div className="track">
     <img className="track-cover" src={cover} alt={song} />
-    <h6>{song}</h6>
-    <h6>{artist}</h6>
-    <button onClick={() => {
-      if (label=='Select'){
-        setLabel("Deselect")
-        Datas(uri);
-      }else{
-        setLabel("Select")
-    }}}>{label}</button>
+    <div className="track-details">
+      <h6>{song}</h6>
+      <h6>{artist}</h6>
+      <button onClick={() => {
+        if (label=='Select'){
+          setLabel("Deselect")
+          Datas(uri);
+        }else{
+          setLabel("Select")
+      }}}>{label}</button>
+    </div>
   </div>
   );
 };
