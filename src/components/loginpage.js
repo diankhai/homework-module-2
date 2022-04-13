@@ -1,5 +1,8 @@
-import { render } from "@testing-library/react";
+// import { render } from "@testing-library/react";
+import {Helmet} from "react-helmet";
 import React from "react";
+import Button from "@mui/material/Button";
+import { Global, css } from "@emotion/react";
 
 const authEndpoint = "https://accounts.spotify.com/authorize";
 const clientId = "de080cb8483748199cea3244c39496cd";
@@ -12,14 +15,29 @@ class Login extends React.Component {
     };
     render(){
     return(
+        <>
+            {/* <Global
+            styles={css`
+            * {
+                font-family: Roboto, sans-serif;
+            }
+            `}
+            /> */}
+        <Helmet>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+        </Helmet>
         <div className="main">
             <div className="wrapper-login">
                 <img className="logo" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" alt="" />
                 <br />
                 <h5>Click the button below to Login!</h5>
-                <button onClick={this.handleURL} className="accessBtn">Authorization</button>
+                <Button variant="contained" onClick={this.handleURL} className="accessBtn">Authorization</Button>
             </div>
         </div>
+        </>
     )}
 };
 
