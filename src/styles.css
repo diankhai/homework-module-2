@@ -147,6 +147,7 @@ textarea{
 }
 .wrapper-login {
   display: block;
+  padding:30px;
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
@@ -156,7 +157,6 @@ textarea{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .accessBtn{
-  margin: 20px;
   width:200px;
   height:50px;
 }

@@ -6,10 +6,9 @@ import {
   Navigate
 } from "react-router-dom";
 import "./styles.css";
-import Header from "./Header";
-import NewPlaylist from "./newPlaylist";
-import Login from "./components/loginpage";
-// import { useSelector } from "react-redux";
+import Header from "./components/Header";
+import NewPlaylist from "./components/pages/newPlaylist";
+import Login from "./components/pages/loginpage";
 import { getParamValues } from "./components/spotifyAuth";
 
 export default function App() {
